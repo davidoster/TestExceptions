@@ -14,13 +14,12 @@ package mypackage;
 public class MyClass {
     private static MyClass myClass; // = new MyClass();
     
-    private MyClass() {
-        
-//        myClass = new MyClass();
-    }
+    private MyClass() {}
     
     public static MyClass getInstance() throws InstantiationException, IllegalAccessException {
         if(myClass == null) {
+            // how to call the cosntructor from a method?
+            System.out.println(new MyClass());
             myClass = MyClass.class.newInstance();
 //            createInstance();
         }
