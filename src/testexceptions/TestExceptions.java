@@ -5,8 +5,8 @@
  */
 package testexceptions;
 
+import mypackage.MyClass;
 import testexceptions.Parent.SomeClass;
-import testexceptions.Parent.SomeOtherClass;
 
 /**
  *
@@ -17,21 +17,37 @@ public class TestExceptions { //extends Parent {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        TestExceptions test = new TestExceptions();
-//        test.
+    public static void main(String[] args) throws InstantiationException, IllegalAccessException {
+        MyClass myClass = MyClass.getInstance();
+        myClass.myMethod();
+        MyClass myClass2 = MyClass.getInstance();
+        myClass2.myMethod();
+        MyClass myClass3 = myClass2.getInstance();
+        myClass3.myMethod();
+//        
         
-        msg();
-        SomeThirdClass someThird = new SomeThirdClass(); // default access modifier on Parent
         
-        Parent parent = new Parent();
-        // ask from parent object to create a new instance of SomeOtherClass()
-        SomeOtherClass someOtherClass = parent.new SomeOtherClass();  // inner
+        
+//        TestExceptions test = new TestExceptions();
+////        test.
+//        
+//        msg();
+//        SomeThirdClass someThird = new SomeThirdClass(); // default access modifier on Parent
+//        
+//        Parent parent = new Parent();
+//        // ask from parent object to create a new instance of SomeOtherClass()
+//        SomeOtherClass someOtherClass = parent.new SomeOtherClass();  // inner
         
         // qualified new of static class
-        SomeClass someClass2 = new SomeClass(); // static nested
-        SomeClass someClass3 = new SomeClass(); // static nested
-        SomeClass someClass4 = new SomeClass(); // static nested
+//        SomeClass someClass2 = new SomeClass(); // static nested
+//        SomeClass someClass3 = new SomeClass(); // static nested
+//
+//        someClass2.setCount(10);        
+//        System.out.println("the count by 3 is: " + someClass3.getCount());
+////        System.out.println("the count by 2 is: " + someClass2.getCount());
+//
+//        SomeClass someClass4 = new SomeClass(); // static nested
+//        System.gc(); // garbage collector
     }
     
 

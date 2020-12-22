@@ -14,15 +14,27 @@ public class Parent {
 //    B. inner
 //    C. nested
 
-    static int count = 0;
+
 
     // static nested
     public static final class SomeClass {
+        private static int count = 0;
 
+        public  int getCount() {
+            return count;
+        }
+
+        public  void setCount(int aCount) {
+            count = aCount;
+        }
+        
+        
         public SomeClass() {
             count++;
             System.out.println("count: " + count);
         }
+        
+        
     }
 
     // inner

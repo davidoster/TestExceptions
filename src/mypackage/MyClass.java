@@ -12,9 +12,26 @@ package mypackage;
  * @author George.Pasparakis
  */
 public class MyClass {
-//    SomeThirdClass someThird = new SomeThirdClass();  // can't do this
+    private static MyClass myClass; // = new MyClass();
+    
+    private MyClass() {
+        
+//        myClass = new MyClass();
+    }
+    
+    public static MyClass getInstance() throws InstantiationException, IllegalAccessException {
+        if(myClass == null) {
+            myClass = MyClass.class.newInstance();
+//            createInstance();
+        }
+        return(myClass);
+    }
+    
+//    private static void createInstance() {
+//        myClass = new MyClass();
+//    }
     
     public void myMethod() {
-        
+        System.out.println(this);
     }
 }
