@@ -5,6 +5,10 @@
  */
 package mypackage;
 
+import exceptions.NoInstance;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 
 
 /**
@@ -18,7 +22,12 @@ public class MyClass {
     
     public static MyClass getInstance() throws InstantiationException, IllegalAccessException {
         if(myClass == null) {
-            // how to call the cosntructor from a method?
+            try {
+                // how to call the cosntructor from a method?
+                throw new NoInstance("No Instance of MyClass!!!\nCreating new Instance!!!");
+            } catch (NoInstance ex) {
+                Logger.getLogger(MyClass.class.getName()).log(Level.SEVERE, null, ex);
+            }
             System.out.println(new MyClass());
             myClass = MyClass.class.newInstance();
 //            createInstance();

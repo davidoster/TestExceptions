@@ -5,14 +5,14 @@
  */
 package testexceptions;
 
+import java.io.IOException;
 import mypackage.MyClass;
-import testexceptions.Parent.SomeClass;
 
 /**
  *
  * @author George.Pasparakis
  */
-public class TestExceptions { //extends Parent {
+public class TestExceptions extends Parent {
 
     /**
      * @param args the command line arguments
@@ -52,7 +52,7 @@ public class TestExceptions { //extends Parent {
     
 
 //    @Override
-    public static void msg() { // throws IOException {
+    public static void msg() throws ArithmeticException {
         System.out.println("main");
     }
     
